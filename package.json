@@ -6,16 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . eslint src --ext .tsx,.ts",
+    "lint:fix": "eslint . eslint src --ext .tsx,.ts --fix"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
+    "keen-slider": "^6.8.6",
     "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
     "@types/node": "20.8.7",
     "@types/react": "18.2.29",
+    "eslint": "^8.52.0",
     "typescript": "5.2.2"
   }
 }
