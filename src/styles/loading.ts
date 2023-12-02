@@ -1,4 +1,14 @@
+import { keyframes } from '@stitches/react'
 import { styled } from './index'
+
+const pulse = keyframes({
+  '0%, 100%': {
+    opacity: 0.5,
+  },
+  '50%': {
+    opacity: 1,
+  },
+})
 
 export const LoadContainer = styled('main', {
   display: 'grid',
@@ -8,33 +18,16 @@ export const LoadContainer = styled('main', {
 
   maxWidth: 1180,
   margin: '0 auto',
+  animation: `${pulse} 1.3s ease-in-out infinite`,
 })
 
 export const ImageLoad = styled('div', {
   width: '100%',
   maxWidth: 576,
   height: 656,
-  background: '$gray800',
+  background: '$gray300',
+  opacity: 0.1,
   borderRadius: 8,
-  //   position: 'relative',
-  //   overflow: 'hidden',
-
-  //   '&::after': {
-  //     content: '',
-  //     position: 'absolute',
-  //     top: 0,
-  //     right: 0,
-  //     bottom: 0,
-  //     left: 0,
-  //     background: 'linear-gradient(90deg, $gray600 0%, $gray800 15%)',
-  //     animation: 'shimmer 1s linear infinite',
-  //   },
-
-  //   '@keyframes shimmer': {
-  //     '80%': {
-  //       transform: 'translateX(100%)',
-  //     },
-  //   },
 })
 
 export const ProductLoad = styled('div', {
@@ -43,8 +36,8 @@ export const ProductLoad = styled('div', {
 
   h1: {
     width: 576,
-    backgroundColor: '$gray800',
-    color: '$gray800',
+    background: '$gray300',
+    opacity: 0.1,
     borderRadius: 8,
   },
 
@@ -52,8 +45,8 @@ export const ProductLoad = styled('div', {
     marginTop: '1rem',
     width: 450,
     height: 60,
-    backgroundColor: '$gray800',
-    color: '$gray800',
+    background: '$gray300',
+    opacity: 0.1,
     borderRadius: 8,
   },
 
@@ -61,8 +54,8 @@ export const ProductLoad = styled('div', {
     marginTop: '2.5rem',
     width: 576,
     height: 120,
-    backgroundColor: '$gray800',
-    color: '$gray800',
+    background: '$gray300',
+    opacity: 0.1,
     borderRadius: 8,
   },
 
@@ -70,8 +63,8 @@ export const ProductLoad = styled('div', {
     marginTop: 'auto',
     width: 576,
     height: 80,
-    backgroundColor: '$gray800',
-    color: '$gray800',
+    background: '$gray300',
+    opacity: 0.1,
     border: 0,
     borderRadius: 8,
   },

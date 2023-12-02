@@ -52,7 +52,6 @@ export default function Product({ product }: ProductProps) {
   if (isFallback) {
     return <LoadingContent />
   }
-
   return (
     <ProductContainer>
       <ImageContainer>
