@@ -12,19 +12,23 @@ import LoadingContent from '../../lib/loadingContent'
 import axios from 'axios'
 import { useState } from 'react'
 import Head from 'next/head'
+import { useShoppingCart } from 'use-shopping-cart'
 
 interface ProductProps {
   product: {
     id: string
     name: string
+    currency: string
     imageUrl: string
-    price: string
+    price: number
     description: string
     defaultPriceId: string
   }
 }
 
 export default function Product({ product }: ProductProps) {
+  const { addItem, cartDetails } = useShoppingCart()
+
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
     useState(false)
 
@@ -72,9 +76,12 @@ export default function Product({ product }: ProductProps) {
 
           <button
             disabled={isCreatingCheckoutSession}
-            onClick={handleBuyProduct}
+            onClick={() =>
+              addItem({ ...product, sku: product.id }) &&
+              console.log(cartDetails)
+            }
           >
-            Comprar agora
+            Colocar na sacola
           </button>
         </ProductDetails>
       </ProductContainer>
